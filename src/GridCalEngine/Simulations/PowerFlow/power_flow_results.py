@@ -344,7 +344,7 @@ class PowerFlowResults(ResultsTemplate):
 
         return df
 
-    def get_oveload_score(self, branch_prices: Vec):
+    def get_overload_score(self, branch_prices: Vec):
         """
         Compute the cost of overload
         :param branch_prices: array of branch prices
@@ -353,6 +353,22 @@ class PowerFlowResults(ResultsTemplate):
         ld = np.abs(self.loading)
         idx = np.where(ld > 1)[0]
         cost = np.sum(ld[idx] * branch_prices[idx])
+        return cost
+
+    def get_undervoltage_overvoltage_score(self, undervoltage_prices: Vec, overvoltage_prices: Vec,
+                                           vmin: Vec, vmax: Vec):
+        """
+        Compute the cost of undervoltages and overvoltages
+        :param undervoltage_prices: array of undervoltage prices linked to buses (to be included)
+        :param overvoltage_prices: array of overvoltage prices linked to buses (to be included)
+        :param Vmin: bus data identifying the minimum accepted voltage
+        :param Vmax: bus data identifying the maximum accepted voltage
+        :return:
+        """
+        vm = np.abs(self.voltage)
+        vmax_diffs = np.array(vm - vmax).clip(min=0)
+        vmin_diffs = np.array(vmin - vm).clip(min=0)
+        cost = np.sum(vmax_diffs * overvoltage_prices) + np.sum(vmin_diffs * undervoltage_prices)
         return cost
 
     def get_bus_df(self) -> pd.DataFrame:

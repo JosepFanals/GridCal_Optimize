@@ -43,6 +43,9 @@ class BusData:
         self.is_dc: BoolVec = np.empty(nbus, dtype=bool)
         self.areas: IntVec = np.empty(nbus, dtype=int)
 
+        self.overvoltage_cost: Vec = np.zeros(nbus, dtype=float)
+        self.undervoltage_cost: Vec = np.zeros(nbus, dtype=float)
+
         self.original_idx: IntVec = np.zeros(nbus, dtype=int)
 
     def slice(self, elm_idx: IntVec) -> "BusData":
@@ -69,6 +72,9 @@ class BusData:
         data.installed_power = self.installed_power[elm_idx]
         data.is_dc = self.is_dc[elm_idx]
         data.areas = self.areas[elm_idx]
+
+        data.overvoltage_cost = self.overvoltage_cost[elm_idx]
+        data.undervoltage_cost = self.undervoltage_cost[elm_idx]
 
         data.original_idx = elm_idx
 
@@ -97,6 +103,9 @@ class BusData:
         data.installed_power = self.installed_power.copy()
         data.is_dc = self.is_dc.copy()
         data.areas = self.areas.copy()
+
+        data.overvoltage_cost = self.overvoltage_cost.copy()
+        data.undervoltage_cost = self.undervoltage_cost.copy()
 
         data.original_idx = self.original_idx.copy()
 

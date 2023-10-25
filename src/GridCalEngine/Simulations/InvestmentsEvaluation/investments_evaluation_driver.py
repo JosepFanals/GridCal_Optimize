@@ -17,7 +17,7 @@
 import numpy as np
 import hyperopt
 import functools
-from typing import List, Dict, Union
+from typing import List, Dict
 from GridCalEngine.Simulations.driver_template import DriverTemplate
 from GridCalEngine.Simulations.driver_types import SimulationTypes
 from GridCalEngine.Simulations.InvestmentsEvaluation.investments_evaluation_results import InvestmentsEvaluationResults
@@ -51,20 +51,16 @@ class InvestmentsEvaluationDriver(DriverTemplate):
 
         self.pf_options: PowerFlowOptions = pf_options
 
-        # results object
         self.results = InvestmentsEvaluationResults(investment_groups_names=grid.get_investment_groups_names(),
                                                     max_eval=0)
 
         self.__eval_index = 0
 
-        # dictionary of investment groups
         self.investments_by_group: Dict[int, List[Investment]] = self.grid.get_investmenst_by_groups_index_dict()
 
-        # dimensions
         self.dim = len(self.grid.investments_groups)
 
-        # numerical circuit
-        self.nc: Union[NumericalCircuit, None] = None
+        self.nc: NumericalCircuit = None
 
     def get_steps(self):
         """
@@ -76,7 +72,8 @@ class InvestmentsEvaluationDriver(DriverTemplate):
     def objective_function(self, combination: IntVec):
         """
         Function to evaluate a combination of investments
-        :param combination: vector of investments (yes/no)
+        :param combination:
+        :param nc: NumericalCircuit
         :return: objective function value
         """
 
@@ -92,9 +89,11 @@ class InvestmentsEvaluationDriver(DriverTemplate):
         # do something
         res = multi_island_pf_nc(nc=self.nc, options=self.pf_options)
         total_losses = np.sum(res.losses.real)
-        overload_score = res.get_oveload_score(branch_prices=self.nc.branch_data.overload_cost)
-        voltage_score = 0.0
-
+        overload_score = res.get_overload_score(branch_prices=self.nc.branch_data.overload_cost)
+        voltage_score = res.get_undervoltage_overvoltage_score(undervoltage_prices=self.nc.bus_data.undervoltage_cost,
+                                                               overvoltage_prices=self.nc.bus_data.overvoltage_cost,
+                                                               vmin=self.nc.bus_data.Vmin,
+                                                               vmax=self.nc.bus_data.Vmax)
         f = total_losses + overload_score + voltage_score
 
         # store the results
