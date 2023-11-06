@@ -46,7 +46,7 @@ to start with a poorly conditioned system that would incur penalty costs. Then, 
 proposed algorithm, attractive investments will be proposed to help alleviate the grid from such issues. For 
 reference purposes, the Sigma plot corresponding to the overloaded grid is shown below.
 
-.. figure:: ../figures/optimization/sigma1.png
+.. figure:: ../figures/optimization/sigma2.png
     :alt: Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
 
     Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
