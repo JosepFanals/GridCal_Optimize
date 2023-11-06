@@ -29,6 +29,10 @@ the curse of dimensionality. The methodology we have adopted here consists of:
 Formulation
 -------------
 
+1. Surrogate model
+2. Objective function
+3. Algorithm
+
 Testing
 ------------
 The system under consideration is the IEEE 118-bus system. We have departed from the file 
@@ -50,3 +54,7 @@ reference purposes, the Sigma plot corresponding to the overloaded grid is shown
     :alt: Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
 
     Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
+
+The dots moving towards the limit of the parabola is a telling sign that the system is becoming more
+ill-conditioned and operates close to the voltage collapse point. Hence, the goal is to propose investments
+to operate the grid in safer conditions.

@@ -23,7 +23,7 @@ https://github.com/pypa/sampleproject
 from setuptools import setup, find_packages
 import os
 
-from src.GridCal.__version__ import __GridCal_VERSION__
+from __version__ import __GridCal_VERSION__
 
 
 here = os.path.abspath(os.path.dirname(__file__))
