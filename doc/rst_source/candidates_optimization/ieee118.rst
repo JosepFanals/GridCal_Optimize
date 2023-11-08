@@ -60,7 +60,7 @@ The followed optimization approach derives from the work of Bliek et al. [1]_.
 Testing
 ------------
 The system under consideration is the IEEE 118-bus system. We have departed from the file 
-'IEEE 118 Bus - ntc_areas_two.gridcal'. The initial system is operating in a relatively safe zone as indicated by
+'IEEE 118 Bus - ntc_areas_two.xlsx'. The initial system is operating in a relatively safe zone as indicated by
 HELM's Sigma plot:
 
 .. figure:: ../figures/optimization/sigma1.png
