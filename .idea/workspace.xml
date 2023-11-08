@@ -30,9 +30,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Fixed the selection of investment devices">
+    <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Minor rst update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/IEEE118.gridcal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/Spain.gridcal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/load_and_scale.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/process_documentation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GridCalEngine/Simulations/PowerFlow/power_flow_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridCalEngine/Simulations/PowerFlow/power_flow_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +188,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;204__optimization__candidates&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/a1003/Desktop/GridCal_Optimize/doc/rst_source/candidates_optimization&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/a1003/Desktop/GridCal_Optimize/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -215,7 +220,7 @@
       <recent name="$PROJECT_DIR$/src/GridCal" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.update_gui_file">
+  <component name="RunManager">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="GridCalEngine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1649,7 +1654,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693298903267</updated>
     </task>
-    <option name="localTasksCounter" value="546" />
+    <option name="localTasksCounter" value="547" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1691,7 +1696,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="improved line conversion functions to  other devices&#10;Improved HVDC line drawing" />
     <MESSAGE value="added generator capability curve and capability curve editor" />
     <MESSAGE value="Improved documentation" />
     <MESSAGE value="Improved readme and example scripts" />
@@ -1716,7 +1720,8 @@
     <MESSAGE value="Fixed issues with the investments report" />
     <MESSAGE value="Added default voltage in the GUI and the diagrams" />
     <MESSAGE value="Fixed the selection of investment devices" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the selection of investment devices" />
+    <MESSAGE value="Minor rst update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor rst update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2170,11 +2175,6 @@
           <url>file://$PROJECT_DIR$/src/GridCal/Gui/Main/gui_sub_classes/diagrams.py</url>
           <line>1272</line>
           <option name="timeStamp" value="1426" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/doc/rst_source/candidates_optimization/load_and_scale.py</url>
-          <line>5</line>
-          <option name="timeStamp" value="1427" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -361,8 +361,8 @@ class PowerFlowResults(ResultsTemplate):
         Compute the cost of undervoltages and overvoltages
         :param undervoltage_prices: array of undervoltage prices linked to buses (to be included)
         :param overvoltage_prices: array of overvoltage prices linked to buses (to be included)
-        :param Vmin: bus data identifying the minimum accepted voltage
-        :param Vmax: bus data identifying the maximum accepted voltage
+        :param vmin: bus data identifying the minimum accepted voltage
+        :param vmax: bus data identifying the maximum accepted voltage
         :return:
         """
         vm = np.abs(self.voltage)

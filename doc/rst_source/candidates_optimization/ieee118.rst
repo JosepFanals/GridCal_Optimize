@@ -29,6 +29,34 @@ the curse of dimensionality. The methodology we have adopted here consists of:
 Formulation
 -------------
 
+1. **Objective function**
+The selected objective function takes into account technical criteria. In particular, it is defined as:
+
+.. math::
+    f_o(x) = C_l(x) + C_o(x) + C_v(x)
+
+where :math:`C_l` is a penalty function associated with active power losses, :math:`C_o` accounts for branch
+overloadings, and :math:`C_v` gathers the undervoltage and overvoltage penalties. Note here that the unknown
+:math:`x` is used to represent the investment combination under consideration. That is, :math:`x` has to be seen 
+as a vector that contains an :math:`n`-length set of boolean variables that account for the activated or deactivated 
+investments:
+
+.. math::
+    x = [x_1, x_2, ..., x_n]
+
+or in compact form, equivalently, :math:`x \in \mathbb{Z}^n_2`.
+
+Regarding the undervoltages and overvoltages, the associated penalty is computed as:
+
+.. math::
+    C_v(x) = P_{ov} \max(V_m - V^{\text{max}}_m, 0) + P_{uv} |\max(V^{\text{min}}_m - V_m, 0)|
+
+
+2. **Black-box optimization with a surrogate model** 
+The followed optimization approach derives from the work of Bliek et al. [1]_. 
+
+3. **Algorithm and workflow**
+
 Testing
 ------------
 The system under consideration is the IEEE 118-bus system. We have departed from the file 
@@ -50,3 +78,15 @@ reference purposes, the Sigma plot corresponding to the overloaded grid is shown
     :alt: Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
 
     Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
+
+The dots moving towards the limit of the parabola is a telling sign that the system is becoming more
+ill-conditioned and operates close to the voltage collapse point. Hence, the goal is to propose investments
+to operate the grid in safer conditions.
+
+.. Jana, the Vm values are alright, but the loading of some lines seems extreme. Check branches that surpass
+.. a loading of 500%, and check where they were in the initial scenario (lambda=1) 
+
+.. Jana, in view of the results, we should propose investments that minimize the loading more than everything
+.. else
+
+.. [1] Bliek, Laurens, Arthur Guijt, Sicco Verwer, and Mathijs De Weerdt. "Black-box mixed-variable optimisation using a surrogate model that satisfies integer constraints." In Proceedings of the Genetic and Evolutionary Computation Conference Companion, pp. 1851-1859. 2021.
