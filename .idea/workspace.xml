@@ -32,12 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Minor rst update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/IEEE118.gridcal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/Spain.gridcal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/load_and_scale.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/process_documentation.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GridCalEngine/Simulations/PowerFlow/power_flow_results.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridCalEngine/Simulations/PowerFlow/power_flow_results.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
