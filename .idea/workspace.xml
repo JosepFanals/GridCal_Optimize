@@ -31,8 +31,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Minor rst update">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +215,7 @@
       <recent name="$PROJECT_DIR$/src/GridCal" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.update_gui_file">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <module name="GridCalEngine" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -459,8 +459,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.update_gui_file" />
       <item itemvalue="Python.ExecuteGridCal" />
+      <item itemvalue="Python.update_gui_file" />
       <item itemvalue="Python tests.Nosetests for tests.test_opf_time_series.test_opf_ts" />
       <item itemvalue="Python tests.Nosetests in tests" />
     </list>
@@ -1716,7 +1716,7 @@
     <MESSAGE value="Added default voltage in the GUI and the diagrams" />
     <MESSAGE value="Fixed the selection of investment devices" />
     <MESSAGE value="Minor rst update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor rst update" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
