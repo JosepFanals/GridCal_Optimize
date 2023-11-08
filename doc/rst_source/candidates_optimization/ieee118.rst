@@ -59,7 +59,7 @@ The followed optimization approach derives from the work of Bliek et al. [1]_.
 
 Testing
 ------------
-The system under consideration is the IEEE 118-bus system. We have departed from the file 
+The system under consideration is the IEEE 118-bus system. We have departed from the file
 'IEEE 118 Bus - ntc_areas_two.xlsx'. The initial system is operating in a relatively safe zone as indicated by
 HELM's Sigma plot:
 
@@ -74,7 +74,7 @@ to start with a poorly conditioned system that would incur penalty costs. Then, 
 proposed algorithm, attractive investments will be proposed to help alleviate the grid from such issues. For 
 reference purposes, the Sigma plot corresponding to the overloaded grid is shown below.
 
-.. figure:: ../figures/optimization/sigma2.png
+.. figure:: GridCal_Optimize/doc/rst_source/figures/optimization/sigma2.png
     :alt: Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
 
     Sigma plot of the IEEE 118-bus grid, overloaded by a factor :math:`\lambda=1.5`.
@@ -82,6 +82,14 @@ reference purposes, the Sigma plot corresponding to the overloaded grid is shown
 The dots moving towards the limit of the parabola is a telling sign that the system is becoming more
 ill-conditioned and operates close to the voltage collapse point. Hence, the goal is to propose investments
 to operate the grid in safer conditions.
+
+The grid with the updated demand is studied. The voltage magnitudes are now comprised between 0.918 and 1.05,
+and the loading values of the lines go from 10% to 2667%. There are around 70 branches with loadings higher than 150%, and 4 of them are loaded higher than 1000%.
+Given these excessive values results, the investments proposed will try to minimize the loading of the lines.
+There are different strategies to reduce the load on the lines: add redundant lines to the ones that are overloaded, distribute the generation, get a more meshed network.
+
+Out of the 4 highest loaded branches, 3 of them are in the same relatively isolated area interconnecting 3 generators.
+Before increasing the demand, their loading was around 80%. The first proposed investments, then, are adding redundant lines in this area.
 
 .. Jana, the Vm values are alright, but the loading of some lines seems extreme. Check branches that surpass
 .. a loading of 500%, and check where they were in the initial scenario (lambda=1) 
