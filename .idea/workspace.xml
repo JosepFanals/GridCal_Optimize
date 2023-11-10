@@ -32,8 +32,7 @@
   <component name="ChangeListManager">
     <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Minor rst update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" beforeDir="false" afterPath="$PROJECT_DIR$/doc/rst_source/candidates_optimization/ieee118.rst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/optimization/test_investment_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/doc/optimization/try_investment_optimization.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +183,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;204__optimization__candidates&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/a1003/Desktop/GridCal_Optimize/src&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jana/GridCal_Optimize&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -202,18 +201,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jana\GridCal_Optimize\doc\optimization" />
       <recent name="C:\Users\a1003\Desktop\GridCal_Optimize\doc\rst_source\candidates_optimization" />
       <recent name="$PROJECT_DIR$/src/GridCalEngine/Utils/MIP" />
       <recent name="$PROJECT_DIR$/pics" />
       <recent name="$PROJECT_DIR$/src/GridCal/Gui/GridEditorWidget/Injections" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jana\GridCal_Optimize\doc" />
       <recent name="$PROJECT_DIR$/src/GridCalEngine/Utils" />
       <recent name="$PROJECT_DIR$/pics" />
       <recent name="$PROJECT_DIR$/src/GridCalEngine/Core/Devices/Injections" />
       <recent name="$PROJECT_DIR$/src/GridCal/Gui/GridEditorWidget/substation" />
-      <recent name="$PROJECT_DIR$/src/GridCal" />
     </key>
   </component>
   <component name="RunManager">
@@ -293,8 +292,8 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Jana\GridCal_Optimize" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -2171,6 +2170,11 @@
           <url>file://$PROJECT_DIR$/src/GridCal/Gui/Main/gui_sub_classes/diagrams.py</url>
           <line>1272</line>
           <option name="timeStamp" value="1426" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/doc/optimization/try_investment_optimization.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="1429" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
