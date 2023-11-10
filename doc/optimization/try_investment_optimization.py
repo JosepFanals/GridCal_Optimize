@@ -15,17 +15,29 @@ grid.add_line(line1)
 grid.add_line(line2)
 grid.add_line(line3)
 
-I1 = dev.Investment(device_idtag=line1.idtag, name='Investment1', CAPEX=2)
-I2 = dev.Investment(device_idtag=line2.idtag, name='Investment2', CAPEX=2)
-I3 = dev.Investment(device_idtag=line3.idtag, name='Investment3', CAPEX=2)
+Ig1 = dev.InvestmentsGroup(name='Ig1')
+Ig2 = dev.InvestmentsGroup(name='Ig2')
+Ig3 = dev.InvestmentsGroup(name='Ig3')
+
+I1 = dev.Investment(device_idtag=line1.idtag, name='Investment1', CAPEX=2, group=Ig1)
+I2 = dev.Investment(device_idtag=line2.idtag, name='Investment2', CAPEX=2, group=Ig2)
+I3 = dev.Investment(device_idtag=line3.idtag, name='Investment3', CAPEX=2, group=Ig3)
 
 grid.add_investment(I1)
 grid.add_investment(I2)
 grid.add_investment(I3)
 
+grid.add_investments_group(Ig1)
+grid.add_investments_group(Ig2)
+grid.add_investments_group(Ig3)
+
+
 pf_options = sim.PowerFlowOptions()
 mvrsm = GridCalEngine.basic_structures.InvestmentEvaluationMethod.MVRSM
 inv = sim.InvestmentsEvaluationDriver(grid, method=mvrsm, max_eval=15, pf_options=pf_options)
-inv_results = sim.InvestmentsEvaluationResults(np.array([I1, I2, I3]), max_eval=15)
+inv.run()
+inv_results = inv.results.available_results
 
-print(inv_results)
+
+for i in inv_results:
+    print(type(inv_results[i]))
