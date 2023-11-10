@@ -140,6 +140,9 @@ class Line(ParentBranch):
         # Conductor thermal constant (1/ºC)
         self.alpha = alpha
 
+        # Line cost
+        self.cost = cost
+
         # type template
         self.template = template
 

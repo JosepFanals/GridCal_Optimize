@@ -94,7 +94,6 @@ class InvestmentsEvaluationDriver(DriverTemplate):
                                                                overvoltage_prices=self.nc.bus_data.overvoltage_cost,
                                                                vmin=self.nc.bus_data.Vmin,
                                                                vmax=self.nc.bus_data.Vmax)
-        print('hola', total_losses,overload_score,voltage_score)
         f = total_losses + overload_score + voltage_score
 
         # store the results
