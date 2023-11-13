@@ -79,8 +79,8 @@ class InvestmentsEvaluationDriver(DriverTemplate):
 
         # add all the investments of the investment groups reflected in the combination
         inv_list = list()
-        for i in combination:
-            if i == 1:
+        for i, active in enumerate(combination):
+            if active == 1:
                 inv_list += self.investments_by_group[i]
 
         # enable the investment

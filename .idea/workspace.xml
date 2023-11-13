@@ -2153,11 +2153,6 @@
           <option name="timeStamp" value="1423" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_results.py</url>
-          <line>118</line>
-          <option name="timeStamp" value="1424" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/GridCal/Gui/Main/gui_sub_classes/diagrams.py</url>
           <line>1317</line>
           <option name="timeStamp" value="1425" />
@@ -2168,34 +2163,9 @@
           <option name="timeStamp" value="1426" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
-          <line>194</line>
-          <option name="timeStamp" value="1430" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
-          <line>240</line>
-          <option name="timeStamp" value="1431" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
-          <line>238</line>
-          <option name="timeStamp" value="1432" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/Lib/site-packages/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
           <line>118</line>
           <option name="timeStamp" value="1446" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/doc/optimization/try_investment_optimization.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="1447" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/doc/optimization/try_investment_optimization.py</url>
-          <line>28</line>
-          <option name="timeStamp" value="1448" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/Lib/site-packages/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
@@ -2203,14 +2173,15 @@
           <option name="timeStamp" value="1450" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
-          <line>96</line>
-          <option name="timeStamp" value="1451" />
+          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/results_table.py</url>
+          <line>406</line>
+          <option name="timeStamp" value="1470" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
+        <watch expression="inv_results._f_obj[0]" language="Python" />
         <watch expression="case_['gencost'][0]['costtype']" />
       </configuration>
     </watches-manager>
