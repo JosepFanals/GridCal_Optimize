@@ -33,9 +33,7 @@
     <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Minor rst update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/optimization/try_investment_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/doc/optimization/try_investment_optimization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GridCalEngine/Core/Devices/Branches/line.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridCalEngine/Core/Devices/Branches/line.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GridCalEngine/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridCalEngine/setup.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -2186,13 +2184,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/Lib/site-packages/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
-          <line>230</line>
-          <option name="timeStamp" value="1439" />
+          <line>118</line>
+          <option name="timeStamp" value="1446" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/doc/optimization/try_investment_optimization.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="1447" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/doc/optimization/try_investment_optimization.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="1448" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/venv/Lib/site-packages/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
-          <line>118</line>
-          <option name="timeStamp" value="1446" />
+          <line>229</line>
+          <option name="timeStamp" value="1450" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="1451" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

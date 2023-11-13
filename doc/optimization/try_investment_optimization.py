@@ -1,9 +1,14 @@
-import GridCalEngine.basic_structures
+import sys
+sys.path.append(r'C:\Users\Jana\GridCal_Optimize\src')
+
 from GridCalEngine import *
 from GridCalEngine.IO.file_handler import FileOpen
 import GridCalEngine.Core.Devices as dev
 import GridCalEngine.Simulations as sim
+from GridCalEngine.basic_structures import InvestmentEvaluationMethod
 import numpy as np
+
+
 
 grid = FileOpen('Grids_and_profiles/grids/IEEE118_rate_load15.xlsx').open()
 
@@ -37,7 +42,7 @@ grid.add_investments_group(Ig3)
 
 
 pf_options = sim.PowerFlowOptions()
-mvrsm = GridCalEngine.basic_structures.InvestmentEvaluationMethod.MVRSM
+mvrsm = InvestmentEvaluationMethod.MVRSM
 inv = sim.InvestmentsEvaluationDriver(grid, method=mvrsm, max_eval=15, pf_options=pf_options)
 inv.run()
 inv_results = inv.results.available_results
