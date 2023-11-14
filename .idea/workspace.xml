@@ -30,7 +30,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Minor rst update">
+    <list default="true" id="903393a6-e011-4cf7-964c-90325cdcb845" name="Default Changelist" comment="Solved select investments from combination correctly">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/doc/optimization/try_investment_optimization.py" beforeDir="false" afterPath="$PROJECT_DIR$/doc/optimization/try_investment_optimization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py" afterDir="false" />
@@ -1650,7 +1650,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693298903267</updated>
     </task>
-    <option name="localTasksCounter" value="547" />
+    <option name="localTasksCounter" value="549" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1692,8 +1692,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added generator capability curve and capability curve editor" />
-    <MESSAGE value="Improved documentation" />
     <MESSAGE value="Improved readme and example scripts" />
     <MESSAGE value="Added contingency analysis" />
     <MESSAGE value="Fixed synthax bugs" />
@@ -1717,7 +1715,9 @@
     <MESSAGE value="Added default voltage in the GUI and the diagrams" />
     <MESSAGE value="Fixed the selection of investment devices" />
     <MESSAGE value="Minor rst update" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Add Cost attribute to xlsx" />
+    <MESSAGE value="Solved select investments from combination correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Solved select investments from combination correctly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2177,13 +2177,19 @@
           <line>406</line>
           <option name="timeStamp" value="1470" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/GridCalEngine/Simulations/InvestmentsEvaluation/investments_evaluation_driver.py</url>
+          <line>239</line>
+          <option name="timeStamp" value="1478" />
+        </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="inv_results._f_obj[0]" language="Python" />
-        <watch expression="case_['gencost'][0]['costtype']" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

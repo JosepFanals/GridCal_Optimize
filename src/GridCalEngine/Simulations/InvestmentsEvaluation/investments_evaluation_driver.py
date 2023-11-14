@@ -15,6 +15,7 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 import numpy as np
+import pandas as pd
 import hyperopt
 import functools
 from typing import List, Dict
@@ -61,6 +62,10 @@ class InvestmentsEvaluationDriver(DriverTemplate):
         self.dim = len(self.grid.investments_groups)
 
         self.nc: NumericalCircuit = None
+
+        self.optim_CAPEX = 0
+        self.optim_fobj = 0
+        self.active_investments = None
 
     def get_steps(self):
         """
@@ -191,7 +196,8 @@ class InvestmentsEvaluationDriver(DriverTemplate):
         # configure MVRSM:
 
         # number of random evaluations at the beginning
-        rand_evals = round(self.dim * 1.5)
+        # rand_evals = round(self.dim * 1.5)
+        rand_evals = 0.2 * self.max_eval
         lb = np.zeros(self.dim)
         ub = np.ones(self.dim)
         rand_search_active_prob = 0.5
@@ -225,6 +231,10 @@ class InvestmentsEvaluationDriver(DriverTemplate):
                                                   obj_threshold=threshold,
                                                   stop_crit=stop_crit,
                                                   rand_search_bias=rand_search_active_prob)
+
+        self.active_investments = [self.investments_by_group[i][0] for i, val in enumerate(best_x) if val == 1]
+        self.optim_CAPEX = sum([inv.CAPEX for inv in self.active_investments])
+        self.optim_fobj = inv_scale
 
         self.progress_text.emit("Done!")
         self.progress_signal.emit(0.0)
