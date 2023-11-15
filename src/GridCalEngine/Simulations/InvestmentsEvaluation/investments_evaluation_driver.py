@@ -99,7 +99,9 @@ class InvestmentsEvaluationDriver(DriverTemplate):
                                                                overvoltage_prices=self.nc.bus_data.overvoltage_cost,
                                                                vmin=self.nc.bus_data.Vmin,
                                                                vmax=self.nc.bus_data.Vmax)
-        f = total_losses + overload_score + voltage_score
+        total_capex_opex = np.sum([inv.CAPEX for inv in inv_list]) + np.sum([inv.OPEX for inv in inv_list])
+
+        f = total_losses + overload_score + voltage_score + 100*total_capex_opex
 
         # store the results
         self.results.set_at(eval_idx=self.__eval_index,
