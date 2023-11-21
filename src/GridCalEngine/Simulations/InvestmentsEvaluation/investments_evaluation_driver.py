@@ -67,6 +67,8 @@ class InvestmentsEvaluationDriver(DriverTemplate):
         self.optim_fobj = 0
         self.active_investments = None
 
+        self.technical_crit = []
+
     def get_steps(self):
         """
 
@@ -101,7 +103,11 @@ class InvestmentsEvaluationDriver(DriverTemplate):
                                                                vmax=self.nc.bus_data.Vmax)
         total_capex_opex = np.sum([inv.CAPEX for inv in inv_list]) + np.sum([inv.OPEX for inv in inv_list])
 
-        f = total_losses + overload_score + voltage_score + 100*total_capex_opex
+        technical_criterion = total_losses + overload_score + voltage_score
+
+        f = technical_criterion + 100*total_capex_opex
+
+        self.technical_crit.append(technical_criterion)
 
         # store the results
         self.results.set_at(eval_idx=self.__eval_index,

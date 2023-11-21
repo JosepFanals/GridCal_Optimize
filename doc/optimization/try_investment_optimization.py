@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import random
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -21,7 +22,9 @@ from GridCalEngine.basic_structures import InvestmentEvaluationMethod
 
 
 # Define investment power lines in the grid
-def add_investments_to_grid(grid):
+def add_investments_to_grid(grid, num_random_lines):
+    lines_list = []
+
     line1 = dev.Line(grid.get_buses()[23], grid.get_buses()[71], 'Line_inv_1', r=0.0488, x=0.196, b=0.0488, rate=4.3,
                      cost=2)
     line2 = dev.Line(grid.get_buses()[23], grid.get_buses()[69], 'Line_inv_2', r=0.00221, x=0.4115, b=0.10198, rate=9.4,
@@ -41,17 +44,46 @@ def add_investments_to_grid(grid):
     line6_2 = dev.Line(grid.get_buses()[71], grid.get_buses()[22], 'Line_inv_62', r=0.02, x=0.2, b=0.02, rate=10,
                        cost=2)
 
-    lines_list = [line1, line2, line3, line4_1, line5_1, line6_1, line4_2, line5_2, line6_2]
+    for i in range(num_random_lines):
+        buses = grid.get_buses()
+        bus_f, bus_t = random.sample(range(0, len(buses) - 1), 2)
+        while buses[bus_f].Vnom != buses[bus_t].Vnom or bus_f == bus_t:
+            bus_t = random.randint(0,len(buses)-1)
+
+        line = dev.Line(grid.get_buses()[bus_f], grid.get_buses()[bus_t], 'Line_inv' + str(1+9),
+                        r=0.02, x=0.2, b=0.02, rate=10, cost=2)
+        lines_list.append(line)
+
+    lines_list = lines_list + [line1, line2, line3, line4_1, line5_1, line6_1, line4_2, line5_2, line6_2]
 
     # Add each line as an investment & Investment group
     for i, line in enumerate(lines_list):
         grid.add_line(line)
         inv_group = dev.InvestmentsGroup(name='Ig' + str(i))
-        investment = dev.Investment(device_idtag=line.idtag, name='Investment' + str(i), CAPEX=i%3+1, group=inv_group)
+        investment = dev.Investment(device_idtag=line.idtag, name='Investment' + str(i), CAPEX=1,
+                                    group=inv_group)
         grid.add_investment(investment)
         grid.add_investments_group(inv_group)
 
     return grid
+
+
+def add_random_lines(grid, num_lines):
+    i = 0
+    grid_lines = grid.lines
+    random_idx = random.randint(0, len(grid_lines)-1)
+    while i < num_lines:
+        line = grid_lines[random_idx]
+        line_copy = line.copy()
+        line_copy.idtag = 'cc' + str(i)
+        grid.add_line(line_copy)
+        Ig = dev.InvestmentsGroup(name='Ig' + str(i+9))
+        grid.add_investments_group(Ig)
+        I = dev.Investment(device_idtag=line_copy.idtag, name='Investment'+str(i+9), CAPEX=i % 4 + 1, group=Ig)
+        grid.add_investment(I)
+
+    return grid
+
 
 def obtain_multiple_optimal_points(grid, pf_options, method, number_it):
     ### Store data of different optimal points
@@ -89,43 +121,51 @@ def obtain_multiple_optimal_points(grid, pf_options, method, number_it):
 
     # Print investment evaluation report
     df_last = inv_results.mdl(results_tpe_report).to_df()
+    df_last['Technical criterion'] = inv.technical_crit
 
     return df_total, df_last
 
 
-def plot_scatter_plot(df_results, title):
-    # Generate and display Pareto plot
-    x_values = df_results['CAPEX (M€)']
-    y_values = df_results['Objective function']
-
+def plot_scatter_plot(x_values, y_values, title):
     # Scatter plot
     plt.scatter(x_values, y_values, marker='o', alpha=0.5)
 
     # Set axis labels and title
     plt.xlabel('CAPEX (M€)')
-    plt.ylabel('Objective function')
+    plt.ylabel('')
     plt.title(title)
+
 
 if __name__ == "__main__":
     grid = FileOpen('Grids_and_profiles/grids/IEEE118_rate_load15.xlsx').open()
 
-    grid = add_investments_to_grid(grid)
+    grid = add_investments_to_grid(grid, num_random_lines=20)
+    #grid = add_random_lines(grid,10)
 
     pf_options = sim.PowerFlowOptions()
     mvrsm = InvestmentEvaluationMethod.MVRSM
-    iterations = 50
+    iterations = 1
 
-    df_total, df_last_inv = obtain_multiple_optimal_points(grid=grid, pf_options=pf_options, method=mvrsm, number_it=iterations)
+    df_total, df_last_inv_20 = obtain_multiple_optimal_points(grid=grid, pf_options=pf_options, method=mvrsm,
+                                                           number_it=iterations)
+
+    grid = add_investments_to_grid(grid, num_random_lines=30)
+    df_total, df_last_inv_50 = obtain_multiple_optimal_points(grid=grid, pf_options=pf_options, method=mvrsm,
+                                                           number_it=iterations)
+
+
+    df_last_inv = pd.concat([df_last_inv_20[['CAPEX (M€)','Technical criterion']],df_last_inv_50[['CAPEX (M€)','Technical criterion']]],axis =0)
 
     plt.figure(1)
-    plot_scatter_plot(df_last_inv,'Dispersion Plot: Objective function vs CAPEX for 1 MVRSM optimization process')
+    plot_scatter_plot(x_values=df_last_inv['CAPEX (M€)'], y_values=df_last_inv['Technical criterion'],
+                      title='Technical vs economic criterion '
+                            'for 1 MVRSM optimization process')
 
-    plt.figure(2)
-    plot_scatter_plot(df_total, 'Dispersion Plot: Objective function vs CAPEX for optimal points')
+    # plt.figure(2)
+    # plot_scatter_plot(df_total, 'Dispersion Plot: Objective function vs CAPEX for optimal points')
 
     print('Plots are here!!')
     plt.show()
-
 
 '''
 # Try random lines redundancies
